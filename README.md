@@ -1,8 +1,8 @@
-# React Controlled Components
+# React Controlled Components 
 
-## Overview 
+## Overview
 
-In this lesson, we'll discuss components and how to use components to set and get values in form elements. 
+In this lesson, we'll discuss components and how to use components to set and get values in form elements.
 
 ## Objectives
 1. Explain how React uses `value` on, e.g., `<input>`
@@ -10,7 +10,7 @@ In this lesson, we'll discuss components and how to use components to set and ge
 3. Describe strategies for using controlled components
 4. Use controlled inputs to validate values
 5. Distinguish between `value` and `defaultValue` in a React controlled component
-   
+
 ## Form basics
 ![You'll be writing a lot of forms in React.](http://s2.quickmeme.com/img/95/95a52393032e643e9817eda6d7485cc770865ea6929278386c8e723a6ca42adc.jpg)
 
@@ -45,14 +45,14 @@ In controlled components, we explicitly set the value of a component, and update
 class ControlledInput extends React.Component {
   constructor() {
     super();
-    
+
     this.handleChange = this.handleChange.bind(this);
-    
+
     this.state = {
       value: '',
     };
   }
-  
+
   handleChange(ev) {
     this.setState({
       value: ev.target.value,
@@ -67,7 +67,7 @@ class ControlledInput extends React.Component {
 }
 ```
 
-As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want. 
+As you can see, we can easily define the initial value by setting the initial `value` property on the state to whatever we want.
 
 Using a controlled component is the preferred way to do things in React — it allows us to keep _all_ component state in the React state, instead of relying on the DOM to retrieve the element's value through its internal state. Whenever our state\ changes, the component re-renders, rendering the input with the new updated value. If we don't update the state, our input wouldn't update when the user would type. In other words, we need to update our input's state _programatically_.
 
